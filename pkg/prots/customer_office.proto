@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package pkg.prots;
+
+option go_package = "/pkg/prots";
+
+import "google/protobuf/timestamp.proto";
+
+
+service OfficeService {
+  rpc CreateOffice(CreateOfficeRequest) returns (CreateOfficeResponse) {}
+  rpc GetOfficeList(GetOfficeListRequest) returns (GetOfficeListResponse) {}
+}
+
+message CreateOfficeRequest {
+  string name = 1;
+  string address = 2;
+}
+
+message CreateOfficeResponse {}
+
+message GetOfficeListRequest {
+}
+
+message GetOfficeListResponse {
+  repeated Office result = 1;
+}
+
+message Office {
+  string uuid = 1;
+  string name = 2;
+  string address = 3;
+  google.protobuf.Timestamp created_at = 4;
+}
