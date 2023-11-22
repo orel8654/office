@@ -1,0 +1,5 @@
+host: "host"
+port: ""
+user: "admin"
+password: "admin"
+name: "default"
